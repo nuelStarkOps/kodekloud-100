@@ -2,7 +2,10 @@
 
 ```bash
 # get the instance id
-aws ec2 describe-instances --filters "Name:tag=Name, Values=datacenter-ec2"
+aws ec2 describe-instances \
+  --filters "Name=tag:Name,Values=datacenter-ec2" \
+  --query "Reservations[].Instances[].InstanceId" \
+  --output text
 
 # stop the instance
 aws ec2 stop-instances --instance-ids <instance-id>

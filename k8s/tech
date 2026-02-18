@@ -1,0 +1,20 @@
+Phase 1 – Minikube
+Deploy apps
+Break them
+Add Ingress
+Use HPA
+Work with volumes
+Practice rolling updates
+
+
+Phase 2 – Kind
+Multi-node simulation
+Helm testing
+CI/CD pipeline integration
+
+
+Phase 3 – Real Cloud (EKS/GKE)
+IAM
+VPC
+Managed services
+Terraform provisioning
