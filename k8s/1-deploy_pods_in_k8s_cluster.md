@@ -1,21 +1,10 @@
 **task - deploy a pod named pod-nginx in the cluster using the nginx:latest tag. specify the name of the container as nginx-container and app label to be nginx-app**
 
-```yaml
-apiVersion: v1
-kind: Pod
-metadata:
-  name: pod-nginx
-  labels:
-    app: nginx-app
-spec:
-  containers:
-  - name: nginx-container
-    image: nginx:latest
-```
+[yaml file](./1-deploy_nginx.yaml)
 
 ```bash
 #create the pod
-kubectl apply -f nginx.yaml
+kubectl apply -f 1-deploy_nginx.yaml
 
 #verify pod creation
 kubectl get pods

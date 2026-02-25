@@ -5,29 +5,19 @@
 
 - Name the container nginx-container. Ensure the replica count is 4.
 
-```yaml
-apiVersion: apps/v1
-kind: ReplicaSet
-metadata:
-  name: nginx-replicaset
-  labels:
-    app: nginx_app
-    type: front-end
-spec:
-  replicas: 4
-  selector:
-    matchLabels:
-      app: nginx_app
-      type: front-end
-  template:
-    metadata:
-      labels:
-        app: nginx_app
-        type: front-end
-    spec:
-      containers:
-      - name: nginx-container
-        image: nginx:latest
-        ports:
-        - containerPort: 80
+
+[yaml file](./7-replica_set.yaml)
+
+```bash
+#create the replicaset
+kubectl apply -f 7-replica_set.yaml
+
+#verify the replicaset
+kubectl get rs
+
+#get more info about the replicaset
+kubectl describe rs nginx-replicaset
+
+#cleanup
+kubectl delete rs nginx-replicaset
 ```

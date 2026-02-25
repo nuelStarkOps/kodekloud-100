@@ -6,24 +6,9 @@
 
 - Execute the command sleep 5
 
-```yaml
-apiVersion: batch/v1
-kind: Job
-metadata:
-  name: countdown-nautilus
-spec:
-  template:
-    metadata:
-      name: countdown-nautilus
-    spec:
-      restartPolicy: Never
-      containers:
-      - name: container-countdown-nautilus
-        image: ubuntu:latest
-        command:
-        - sleep
-        - "5"
-```
+
+[yaml file](./9-countdown_nautilus.yaml)
+
 
 ```bash
 # deploy job

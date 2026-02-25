@@ -12,23 +12,24 @@ To kickstart the process, they're creating cron jobs in the Kubernetes cluster w
 
 - Ensure the restart policy is OnFailure.
 
-```yaml
-apiVersion: batch/v1
-kind: CronJob
-metadata:
-  name: nautilus
-spec:
-  schedule: "*/7 * * * *"
-  jobTemplate:
-    spec:
-      template:
-        spec:
-          restartPolicy: OnFailure
-          containers:
-          - name: cron-nautilus
-            image: httpd:latest
-            command:
-            - /bin/sh
-            - -c
-            - echo Welcome to xfusioncorp!
+---
+
+
+***write the yaml file for the cronjob***
+
+[yaml file](./8-schedule_cronjob.yaml)
+
+
+```bash
+#create the cronjob
+kubectl apply -f 8-schedule_cronjob.yaml
+
+#verify the cronjob
+kubectl get cronjob
+
+#get more info about the cronjob
+kubectl describe cronjob nautilus
+
+#cleanup
+kubectl delete cronjob nautilus
 ```

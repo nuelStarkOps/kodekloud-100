@@ -1,6 +1,8 @@
 **task - create a namespace named dev and deploy a pod named dev-nginx-pod in the dev namespace using the nginx:latest tag. specify the name of the container as nginx and app label to be nginx-app**
 
+---
 
+***create nginx.yaml***
 
 ```yaml
 apiVersion: v1
@@ -14,6 +16,10 @@ spec:
     ports:
     - containerPort: 80
 ```
+
+---
+
+***bash commands***
 
 ```bash
 #create the namespace
@@ -30,9 +36,10 @@ kubectl get pods --show-labels -n dev
 
 #verify pod description
 kubectl describe pod dev-nginx-pod
+```
 
-#clennup
-
+***cleanup***
+```bash
 #delete the pod
 kubectl delete pod dev-nginx-pod
 

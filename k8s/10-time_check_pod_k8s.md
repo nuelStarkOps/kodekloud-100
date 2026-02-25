@@ -24,38 +24,14 @@ kubectl get configmap time-config -n nautilus
 ```
 
 3. create pod
-```yaml
-apiVersion: v1
-kind: Pod
-metadata:
-  name: time-check
-  namespace: nautilus
-spec:
-  containers:
-  - name: time-check
-    image: busybox:latest
-    command:
-    - /bin/sh
-    - -c
-    - while true; do date; sleep $TIME_FREQ; done >> /opt/devops/time/time-check.log
-    env:
-    - name: TIME_FREQ
-      valueFrom:
-        configMapKeyRef:
-          name: time-config
-          key: TIME_FREQ
-    volumeMounts:
-    - name: log-volume
-      mountPath: /opt/devops/time
-  volumes:
-  - name: log-volume
-    emptyDir: {}
-```
+---
+Write the [yaml file](./10-time_check_k8s.yaml)
 
+---
 
 ```bash
 # apply k8s file
-kubectl apply -f time-check.yaml
+kubectl apply -f 10-time_check_k8s.yaml
 
 kubectl get pods -n nautilus
 ```
