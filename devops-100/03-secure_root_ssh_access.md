@@ -1,3 +1,5 @@
+# Linux User Management - secure root ssh access
+
 **task -  disable direct root login onn all app servers**
 
 edit the /etc/ssh/sshd_config file and set the PermitRootLogin parameter to no
