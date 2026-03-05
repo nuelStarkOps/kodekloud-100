@@ -1,6 +1,6 @@
-**task - create a subnet named datacenter-subnet in the default vpc in the us-east-1 region**
+**task - create a subnet named subnet-name in the default vpc in the us-east-1 region**
 
-login to the aws console and create a subnet named "datacenter-subnet" in the default vpc in the us-east-1 region.
+login to the aws console and create a subnet named "subnet-name" in the default vpc in the us-east-1 region.
 
 OR using CLI ...
 

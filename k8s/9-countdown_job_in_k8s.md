@@ -1,6 +1,6 @@
-- Create a job named countdown-nautilus.
+- Create a job named countdown-job-name.
 
-- The spec template should be named countdown-nautilus (under metadata), and the container should be named container-countdown-nautilus
+- The spec template should be named countdown-job-name (under metadata), and the container should be named container-countdown-job-name
 
 - Utilize image ubuntu with latest tag (ensure to specify as ubuntu:latest), and set the restart policy to Never.
 
@@ -12,10 +12,10 @@
 
 ```bash
 # deploy job
-kubectl apply -f countdown-nautilus.yaml
+kubectl apply -f countdown-job-name.yaml
 
 # verify job
-kubectl get job countdown-nautilus
+kubectl get job countdown-job-name
 
 # watch pod
 kubectl get pods -w

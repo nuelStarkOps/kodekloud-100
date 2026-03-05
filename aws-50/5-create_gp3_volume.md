@@ -1,6 +1,6 @@
 **Create a volume with the following requirements:**
 
-- Name of the volume should be xfusion-volume.
+- Name of the volume should be volume-name.
 - Volume type must be gp3.
 - Volume size must be 2 GiB
 

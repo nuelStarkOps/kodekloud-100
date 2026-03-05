@@ -1,9 +1,9 @@
-**change the instance type of datacenter-ec2 from t2.micro to t2.nano and ensure the instance is in the running state afterwards**
+**change the instance type of ec2-name from t2.micro to t2.nano and ensure the instance is in the running state afterwards**
 
 ```bash
 # get the instance id
 aws ec2 describe-instances \
-  --filters "Name=tag:Name,Values=datacenter-ec2" \
+  --filters "Name=tag:Name,Values=ec2-name" \
   --query "Reservations[].Instances[].InstanceId" \
   --output text
 

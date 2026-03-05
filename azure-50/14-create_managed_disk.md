@@ -2,7 +2,7 @@
 
 Create a managed disk with the following requirements:
 
-- Name of the disk should be datacenter-disk.
+- Name of the disk should be disk-name.
 
 - Disk type must be Standard_LRS.
 
@@ -14,12 +14,12 @@ Create a managed disk with the following requirements:
 az group list -o table
 ```
 
-***--> kml_rg_main-c58ee97a9e4346c2***
+***--> resource-group-name***
 
 ```bash
 # create managed disk
-az disk create --resource-group kml_rg_main-c58ee97a9e4346c2 --name datacenter-disk --sku Standard_LRS --size 2
+az disk create --resource-group resource-group-name --name disk-name --sku Standard_LRS --size 2
 
 # confnirm disk
-az disk list --resource-group kml_rg_main-c58ee97a9e4346c2 -o table
+az disk list --resource-group resource-group-name -o table
 ```

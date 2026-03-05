@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: nautilus
+  name: cronjob-name
 spec:
   schedule: "*/7 * * * *"
   jobTemplate:
@@ -10,9 +10,9 @@ spec:
         spec:
           restartPolicy: OnFailure
           containers:
-          - name: cron-nautilus
+          - name: cron-container-name
             image: httpd:latest
             command:
             - /bin/sh
             - -c
-            - echo Welcome to xfusioncorp!
+            - echo Welcome to companyname!

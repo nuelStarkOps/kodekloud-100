@@ -10,13 +10,13 @@ An Azure Blob Storage container is a logical grouping of blobs (objects) within 
 az group list --output table
 ```
 
---> kml_rg_main-90bbacf98e2148e8
+--> resource-group-name
 
 
 ## create a storage account
 
 ```bash
-az storage account create --name devopsst13835 --resource-group kml_rg_main-90bbacf98e2148e8 --location eastus --sku <sku>
+az storage account create --name storage-account-name --resource-group resource-group-name --location eastus --sku <sku>
 ```
 
 ## create a private blob container
@@ -24,8 +24,8 @@ az storage account create --name devopsst13835 --resource-group kml_rg_main-90bb
 ```bash
 
 # create a private blob container
-az storage container create --name devops-container --account-name devopsst13835 --public-access off
+az storage container create --name container-name --account-name storage-account-name --public-access off
 
 #verify the container
-az storage container list --account-name devopsst13835 --output table
+az storage container list --account-name storage-account-name --output table
 ```

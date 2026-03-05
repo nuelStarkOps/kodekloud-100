@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: time-check
-  namespace: nautilus
+  namespace: namespace-name
 spec:
   containers:
   - name: time-check

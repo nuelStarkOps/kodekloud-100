@@ -1,8 +1,8 @@
-**task - enable versioning on the s3 bucket - xfusion-s3-22463**
+**task - enable versioning on the s3 bucket - s3-bucket-name**
 
 - login to aws console
 - navigate to s3 service
-- click on the bucket name - xfusion-s3-22463
+- click on the bucket name - s3-bucket-name
 - click on the properties tab
 - scroll down to the versioning section
 - click on the edit button
@@ -13,6 +13,6 @@ OR using aws cli
 
 ```bash
 aws s3api put-bucket-versioning \
-  --bucket xfusion-s3-22463 \
+  --bucket s3-bucket-name \
   --versioning-configuration Status=Enabled
 ```

@@ -1,15 +1,15 @@
-**task - create the user group "nautilus_admin_users" on all 3 app servers and add "sonya" to the group. create the user Sonya if it doesn't exist**
+**task - create the user group "group-name" on all 3 app servers and add "user-name" to the group. create the user user-name if it doesn't exist**
 
 ```bash
 #create the group
-sudo groupadd nautilus_admin_users
+sudo groupadd group-name
 
-#create the sonya user
-sudo useradd sonya -aG nautilus_admin_users
+#create the user-name user
+sudo useradd user-name -aG group-name
 
 #verify the user was created
-id sonya
+id user-name
 
 #verify the group was created
-group sonya
+group user-name
 ```

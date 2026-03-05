@@ -1,6 +1,6 @@
 # Creating a ReplicationController in K8S
 
-The Nautilus DevOps team is establishing a ReplicationController to deploy multiple pods for hosting applications that require a highly available infrastructure. Follow the specifications below to create the ReplicationController:
+The Sample DevOps team is establishing a ReplicationController to deploy multiple pods for hosting applications that require a highly available infrastructure. Follow the specifications below to create the ReplicationController:
 
 
 Create a ReplicationController using the nginx image with latest tag, and name it nginx-replicationcontroller.

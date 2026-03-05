@@ -1,10 +1,10 @@
 # SSL for Nginx
 
-The system admins team of xFusionCorp Industries needs to deploy a new application on App Server 2 in Stratos Datacenter. They have some pre-requites to get ready that server for application deployment. Prepare the server as per requirements shared below:
+The system admins team of CompanyName Industries needs to deploy a new application on App Server 2 in Sample Datacenter. They have some pre-requites to get ready that server for application deployment. Prepare the server as per requirements shared below:
 
 1. Install and configure nginx on App Server 2.
 
-2. On App Server 2 there is a self signed SSL certificate and key present at location /tmp/nautilus.crt and /tmp/nautilus.key. Move them to some appropriate location and deploy the same in Nginx.
+2. On App Server 2 there is a self signed SSL certificate and key present at location /tmp/ssl-cert-name.crt and /tmp/ssl-key-name.key. Move them to some appropriate location and deploy the same in Nginx.
 
 3. Create an index.html file with content Welcome! under Nginx document root.
 
@@ -30,16 +30,16 @@ sudo mkdir -p /etc/nginx/ssl
 ### move the SSL certificate and key to appropriate location
 
 ```bash
-sudo mv /tmp/nautilus.crt /etc/nginx/ssl/
-sudo mv /tmp/nautilus.key /etc/nginx/ssl/
+sudo mv /tmp/ssl-cert-name.crt /etc/nginx/ssl/
+sudo mv /tmp/ssl-key-name.key /etc/nginx/ssl/
 ```
 
 ## edit permissions and ownership for ceertificate and key
 
 ```bash
-sudo chown root:nginx ssl/nautilus.key
-sudo chmod 640 ssl/nautilus.key
-sudo chmod 644 ssl/nautilus.crt
+sudo chown root:nginx ssl/ssl-key-name.key
+sudo chmod 640 ssl/ssl-key-name.key
+sudo chmod 644 ssl/ssl-cert-name.crt
 ```
 
 ## create the nginx server block for SSL
@@ -53,8 +53,8 @@ server {
     listen 443 ssl;
     server_name <app-server-ip>;
 
-    ssl_certificate     /etc/nginx/ssl/nautilus.crt;
-    ssl_certificate_key /etc/nginx/ssl/nautilus.key;
+    ssl_certificate     /etc/nginx/ssl/ssl-cert-name.crt;
+    ssl_certificate_key /etc/nginx/ssl/ssl-key-name.key;
 
     root /usr/share/nginx/html;
     index index.html;

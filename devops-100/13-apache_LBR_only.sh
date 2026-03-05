@@ -15,7 +15,7 @@ sudo iptables -t mangle -X
 
 # allow Apache only from LBR host
 # Allow LBR host to connect to port 6300
-sudo iptables -A INPUT -p tcp -s 172.16.238.14 --dport 6300 -j ACCEPT
+sudo iptables -A INPUT -p tcp -s lbr-server-ip --dport 6300 -j ACCEPT
 
 # Drop everyone else to port 6300
 sudo iptables -A INPUT -p tcp --dport 6300 -j DROP
@@ -46,5 +46,5 @@ sudo iptables -L -n -v
 
 
 #test with curl
-curl http://172.16.238.14:6300 # this should work from the LBR server
-curl http://172.16.238.15:6300 # this should fail frmo other servers
+curl http://lbr-server-ip:6300 # this should work from the LBR server
+curl http://other-server-ip:6300 # this should fail frmo other servers

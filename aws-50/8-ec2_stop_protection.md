@@ -1,9 +1,9 @@
-**enable stop protection on xfusion-ec2 instance**
+**enable stop protection on ec2-name instance**
 
 ```bash
 # get the instance id
 aws ec2 describe-instances \
-  --filters "Name=tag:Name,Values=xfusion-ec2" \
+  --filters "Name=tag:Name,Values=ec2-name" \
   --query "Reservations[].Instances[].InstanceId" \
   --output text
 

@@ -1,4 +1,4 @@
-**task - create a vnet named "xfusion-vnetin westus region wioth any ipv4 CIDR Block**
+**task - create a vnet named "vnet-namein westus region wioth any ipv4 CIDR Block**
 
 - login to azure portal
 - navigate to virtual networks
@@ -12,6 +12,6 @@
 OR using azure cli
 
 ```bash
-az network vnet create --name xfusion-vnet --resource-group kml_rg_main-e02c4d456ff242c6 --address-prefixes 10.0
+az network vnet create --name vnet-name --resource-group resource-group-name --address-prefixes 10.0
 .0.0/16 --location westus
 ```

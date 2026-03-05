@@ -1,29 +1,29 @@
-An instance named devops-ec2 and a volume named devops-volume already exists in us-east-1 region. Attach the devops-volume volume to the devops-ec2 instance, make sure to set the device name to /dev/sdb while attaching the volume.
+An instance named ec2-name and a volume named volume-name already exists in us-east-1 region. Attach the volume-name volume to the ec2-name instance, make sure to set the device name to /dev/sdb while attaching the volume.
 
 ***get instance id and volume id***
 
 ```bash
-aws ec2 describe-instance --filter "Name=tag:Name,Values=devops-ec2" --query "Reservations[].Instances[].InstanceId" --output text
+aws ec2 describe-instance --filter "Name=tag:Name,Values=ec2-name" --query "Reservations[].Instances[].InstanceId" --output text
 
-# --> i-09ad9c5dd982d205b
+# --> <instance-id>
 
-aws ec2 describe-volumes --filter "Name=tag:Name,Values=devops-volume" --query "Volumes[].VolumeId" --output text
+aws ec2 describe-volumes --filter "Name=tag:Name,Values=volume-name" --query "Volumes[].VolumeId" --output text
 
-# --> vol-01497e26e4503dd6e
+# --> <volume-id>
 ```
 
 ***attach volume to instance***
 
 ```bash
 aws ec2 attach-volume \
-  --volume-id vol-0222880c7331bb06f \
-  --instance-id i-09ad9c5dd982d205b \
+  --volume-id <volume-id> \
+  --instance-id <instance-id> \
   --device /dev/sdb
 ```
 
 ***verify volume is attached***
 
-aws describe-volumes --volume-id vol-0222880c7331bb06f
+aws describe-volumes --volume-id <volume-id>
 
 ***Real World Use Case(s)***
  - Attaching additional storage to EC2 instances

@@ -1,6 +1,6 @@
 # Nginx Load Balancer Setup for App servers setup
 
-This document describes the step-by-step procedure to set up **Nginx on the Load Balancer (LBR) server** to load-balance Apache web servers running on multiple app servers in Stratos Datacenter.
+This document describes the step-by-step procedure to set up **Nginx on the Load Balancer (LBR) server** to load-balance Apache web servers running on multiple app servers in Sample Datacenter.
 
 ---
 
@@ -12,9 +12,9 @@ This document describes the step-by-step procedure to set up **Nginx on the Load
 
   | Server     | IP           | Apache Port |
   |-----------|--------------|------------|
-  | App Server 1 | 172.16.238.10 | 6000       |
-  | App Server 2 | 172.16.238.11 | 6000       |
-  | App Server 3 | 172.16.238.12 | 6000       |
+  | App Server 1 | app-server-1-ip | 6000       |
+  | App Server 2 | app-server-2-ip | 6000       |
+  | App Server 3 | app-server-3-ip | 6000       |
 
 - LBR server is accessible from the jump host.
 
@@ -79,9 +79,9 @@ sudo vi /etc/nginx/nginx.conf
 http {
 
     upstream app_servers {
-        server 172.16.238.10:6000;
-        server 172.16.238.11:6000;
-        server 172.16.238.12:6000;
+        server app-server-1-ip:6000;
+        server app-server-2-ip:6000;
+        server app-server-3-ip:6000;
     }
 
     server {

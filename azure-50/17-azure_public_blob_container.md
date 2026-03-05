@@ -8,7 +8,7 @@ Create a new storage account named <storage_account_name> and a public Blob cont
 az storage account create --name <storage_account_name> --resource-group <resource_group_name> --sku Standard_LRS --kind StorageV2
 ```
 
-## create a public blob container named xfusion-blob-8001 within the storage account
+## create a public blob container named blob-name within the storage account
 
 ```bash
 az storage container create --name <blob_name> --account-name <storage_account_name> --public-access blob

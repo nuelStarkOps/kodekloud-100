@@ -1,6 +1,6 @@
 # Linux Passwordless SSH
 
-**Set up a password-less authentication from user thor on jump host to all app servers through their respective sudo users.**
+**Set up a password-less authentication from user user-name on jump host to all app servers through their respective sudo users.**
 
 ```bash
 # generate ssh key pair on jump host

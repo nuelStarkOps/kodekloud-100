@@ -1,6 +1,6 @@
 # Linux SELinux Setup & Configuration
 
-**Following a security audit, the xFusionCorp Industries security team has opted to enhance application and server security with SELinux. To initiate testing, the following requirements have been established for App server 2 in the Stratos Datacenter:**
+**Following a security audit, the CompanyName Industries security team has opted to enhance application and server security with SELinux. To initiate testing, the following requirements have been established for App server 2 in the Sample Datacenter:**
 
 - Install the required SELinux packages.
 - Permanently disable SELinux for the time being; it will be re-enabled after necessary configuration changes.

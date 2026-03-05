@@ -1,6 +1,6 @@
-The Nautilus DevOps team needs a time check pod created in a specific Kubernetes namespace for logging purposes. Initially, it's for testing, but it may be integrated into an existing cluster later. Here's what's required:
+The Sample DevOps team needs a time check pod created in a specific Kubernetes namespace for logging purposes. Initially, it's for testing, but it may be integrated into an existing cluster later. Here's what's required:
 
-- Create a pod called time-check in the nautilus namespace. The pod should contain a container named time-check, utilizing the busybox image with the latest tag (specify as busybox:latest).
+- Create a pod called time-check in the namespace-name namespace. The pod should contain a container named time-check, utilizing the busybox image with the latest tag (specify as busybox:latest).
 
 - Create a config map named time-config with the data TIME_FREQ=10 in the same namespace.
 
@@ -10,17 +10,17 @@ The Nautilus DevOps team needs a time check pod created in a specific Kubernetes
 
 ---
 
-1. create the nautilus namespace
+1. create the namespace-name namespace
 ```bash
-kubectl create namespace nautilus
+kubectl create namespace namespace-name
 ```
 
 2. create config map
 ```bash
-kubectl create configmap time-config --from-literal=TIME_FREQ=10 -n nautilus
+kubectl create configmap time-config --from-literal=TIME_FREQ=10 -n namespace-name
 
 # verify config map
-kubectl get configmap time-config -n nautilus
+kubectl get configmap time-config -n namespace-name
 ```
 
 3. create pod
@@ -33,14 +33,14 @@ Write the [yaml file](./10-time_check_k8s.yaml)
 # apply k8s file
 kubectl apply -f 10-time_check_k8s.yaml
 
-kubectl get pods -n nautilus
+kubectl get pods -n namespace-name
 ```
 
 4. verify the command is executed in the pod
 
 ```bash
 # exec into the pod
-kubectl exec -it time-check -n nautilus -- /bin/sh
+kubectl exec -it time-check -n namespace-name -- /bin/sh
 
 # check the log file
 cat /opt/devops/time/time-check.log 
